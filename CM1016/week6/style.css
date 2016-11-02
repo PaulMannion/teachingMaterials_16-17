@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Ledger');
+
+/* FONT INFORMATION */
+
+h1, h2, h3 {
+    font-family: 'Dancing Script', cursive;
+
+}
+
+p {
+    font-family: 'Ledger', serif;
+}
+
+.food:first-letter{
+    font-size: 150%;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* SECTIONS */
+
+body {
+    width: 700px;
+    margin: auto;
+
+}
+
+header {
+ background-color: #598eb5;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+main {
+    background-color: #c2e7ff;
+    padding: 20px;
+    border-left:1px solid #000000;
+    border-right:1px solid #000000;
+}
+
+footer {
+    background-color: #7acaff;
+    padding: 20px;
+}
+
+.menu_item{
+    border:none;
+    border-bottom:2px dotted #000000;
+}
+
+section > h2 {
+    font-size: 35px;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;
+    background-color: #86c2f6;
+}
+
+.food {
+    margin-bottom: 0;
+}
+.price {
+    margin-top: 0;
+}
+
+.food, .price {
+    text-align: center;
+}
+
