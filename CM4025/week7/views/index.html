@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>My Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="unsemantic-grid-responsive-tablet.css">
+</head>
+
+<body class="grid-container">
+<header class="grid-100">
+    <h1>Welcome to Wizard Chat</h1>
+</header>
+<main class="grid-100">
+    <div id=nickWrap class="prefix-10 grid-80 suffix-10">
+        <p>Greetings wizard! What is your name?</p>
+
+        <p id="nickError"></p>
+
+        <form id="setNick">
+            <input type="text" id="nickname">
+            <input type="submit">
+        </form>
+    </div>
+
+    <div id="contentWrap" class="prefix-10 grid-80 suffix-10">
+        <div id="chatWrap" class="grid-70">
+            <div id="chat"></div>
+            <form id="send-message">
+                <input type="text" id="message">
+                <input type="submit">
+            </form>
+        </div>
+        <div id="users" class="grid-30"></div>
+    </div>
+</main>
+<footer class="grid-100">
+    <p>(c) All of the Wizards except Jimmy</p>
+</footer>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    jQuery(function ($) {
+        var socket = io.connect();
+        var $nickForm = $('#setNick');
+        var $nickError = $('#nickError');
+        var $users = $('#users');
+        var $nickBox = $('#nickname');
+        var $messageForm = $('#send-message');
+        var $messageBox = $('#message');
+        var $chat = $('#chat');
+
+        $nickForm.submit(function (e) {
+            e.preventDefault();
+            socket.emit('new user', $nickBox.val(), function (data) {
+                if (data) {
+                    $('#nickWrap').hide();
+                    $('#contentWrap').show();
+                } else {
+                    $nickError.html('A wizard with that name already exists in this realm');
+                }
+
+            });
+            $nickBox.val('');
+        });
+
+        $messageForm.submit(function (e) {
+            e.preventDefault();
+            socket.emit('send message', $messageBox.val());
+            $messageBox.val('');
+        });
+
+        socket.on('new message', function (data) {
+            $chat.append('<p class="userMessage"><strong>' + data.nick + '</strong>: ' + data.msg + "</p>");
+        });
+
+        socket.on('usernames', function (data) {
+            var html = '';
+            for (i = 0; i < data.length; i++) {
+                html += data[i] + '<br/>';
+                $users.html(html);
+            }
+        })
+    });
+</script>
+</body>
+</html>

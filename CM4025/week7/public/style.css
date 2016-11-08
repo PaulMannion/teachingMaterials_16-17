@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Droid+Sans');
+
+*{
+    font-family: 'Droid Sans', sans-serif;
+
+}
+
+h1, h2 {
+    font-family: 'Abril Fatface', cursive;
+}
+header{
+    background-color: cornsilk;
+}
+main{
+    background-color: cornsilk;
+}
+footer{
+    background-color: cornsilk;
+}
+
+#nickWrap{
+    background-color: #c0b99f;
+}
+
+#contentWrap{
+    background-color: #c0b99f;
+    padding: 10px;
+}
+
+#chatWrap{
+    background-color: #9a9379;
+    padding: 10px;
+}
+
+#chat{
+    height: 350px;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+}
+
+body {
+    margin: auto;
+    width: 960px;
+}
+
+
+
+#contentWrap{
+    display:none;
+}
+
+.userMessage{
+    margin: 0 0 0 10px;
+    padding: 0 0 5px 0;
+}
+
+/* Form Input CSS */
+input[type="text"] {
+    margin: 0;
+    width: 70%;
+    font-family: sans-serif;
+    font-size: 18px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+
+input[type="submit"] {
+    margin: 0;
+    width: 25%;
+    font-size: 22px;
+}
