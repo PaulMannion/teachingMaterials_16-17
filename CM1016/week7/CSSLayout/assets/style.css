@@ -1,0 +1,110 @@
+/* body information */
+body {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* end of body information */
+
+/* header information */
+#logo{
+    height: 50px;
+    float: left;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+h1{
+    margin-left: 90px;
+}
+/* end of header information */
+
+/* nav information */
+nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+/* end of nav information */
+
+
+/* Main information */
+main{
+    height: 400px;
+}
+
+#maincontent {
+    width: 70%;
+    float: left;
+    background-color: #eeeeee;
+    height: 400px;
+}
+/* End of Main section */
+
+
+
+
+/* Sidebar information */
+#sidebar {
+  width: 30%;
+    float: right;
+    background-color: #dddddd;
+    height: 400px;
+}
+
+main p,h2,h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* End of Sidebar section */
+
+
+/* footer information */
+#footer1{
+    background-color: grey;
+    width: 33%;
+    float: left;
+}
+
+#footer2{
+    background-color: lightgrey;
+    width: 34%;
+    display: inline-block;
+}
+
+#footer3{
+    background-color: darkgray;
+    width: 33%;
+    float: right;
+}
+
+footer p{
+    margin: 10px;
+}
+
+/* end of footer information */
+
+
+
+
+
